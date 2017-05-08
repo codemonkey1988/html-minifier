@@ -1,0 +1,8 @@
+plugin.tx_htmlminifier {
+	settings {
+		enable = {$plugin.tx_htmlminifier.enable}
+		remove_comments = {$plugin.tx_htmlminifier.remove_comments}
+		remove_all_whitespaces = {$plugin.tx_htmlminifier.remove_all_whitespaces}
+		keep_typo3_header_comment = {$plugin.tx_htmlminifier.keep_typo3_header_comment}
+	}
+}

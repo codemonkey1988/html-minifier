@@ -1,0 +1,6 @@
+plugin.tx_htmlminifier {
+	enable = 0
+	remove_comments = 1
+	remove_all_whitespaces = 1
+	keep_typo3_header_comment = 1
+}

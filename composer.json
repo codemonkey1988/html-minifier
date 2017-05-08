@@ -1,0 +1,16 @@
+{
+  "name": "codemonkey1988/html-minifier",
+  "type": "typo3-cms-extension",
+  "description": "Minifies the TYPO3 output in frontend.",
+  "homepage": "https://github.com/codemonkey1988/html-minifier/",
+  "license": ["GPL-2.0+"],
+  "keywords": ["TYPO3 CMS", "html_minifier"],
+  "autoload": {
+    "psr-4": {
+      "Codemonkey1988\\HtmlMinifier\\": "Classes/"
+    }
+  },
+  "require": {
+    "zaininnari/html-minifier": "*"
+  }
+}
