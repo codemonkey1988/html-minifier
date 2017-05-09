@@ -4,7 +4,7 @@ $EM_CONF[$_EXTKEY] = [
     'title'            => 'HTML minifier',
     'description'      => 'Minifies the TYPO3 output in frontend.',
     'category'         => 'fe',
-    'contraints'       => [
+    'constraints'       => [
         'depends'   => [
             'typo3' => '7.6.0-8.7.99',
         ],
