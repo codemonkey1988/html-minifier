@@ -5,6 +5,13 @@
   "homepage": "https://github.com/codemonkey1988/html-minifier/",
   "license": ["GPL-2.0+"],
   "keywords": ["TYPO3 CMS", "html_minifier"],
+  "authors": [
+    {
+      "name": "Tim Schreiner",
+      "email": "schreiner.tim@gmail.com",
+      "role": "Developer"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Codemonkey1988\\HtmlMinifier\\": "Classes/"
@@ -12,5 +19,8 @@
   },
   "require": {
     "zaininnari/html-minifier": "*"
+  },
+  "replace": {
+    "html_minifier": "self.version"
   }
 }

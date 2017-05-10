@@ -19,7 +19,7 @@ namespace Codemonkey1988\HtmlMinifier\Hooks;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use zz\Html\HTMLMinify;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
@@ -83,7 +83,7 @@ class TyposcriptFrontendControllerHook
             return;
         }
 
-        $minifier      = new \zz\Html\HTMLMinify($tsfe->content, $this->prepareMinifierOptions($tsfe));
+        $minifier      = new HTMLMinify($tsfe->content, $this->prepareMinifierOptions($tsfe));
         $tsfe->content = $minifier->process();
     }
 
@@ -103,18 +103,18 @@ class TyposcriptFrontendControllerHook
                 case 'xhtml_strict':
                 case 'xhtml_basic':
                 case 'xhtml_11':
-                    $options['doctype'] = \zz\Html\HTMLMinify::DOCTYPE_XHTML1;
+                    $options['doctype'] = HTMLMinify::DOCTYPE_XHTML1;
                     break;
                 default:
-                    $options['doctype'] = \zz\Html\HTMLMinify::DOCTYPE_HTML5;
+                    $options['doctype'] = HTMLMinify::DOCTYPE_HTML5;
                     break;
             }
         } else {
-            $options['doctype'] = \zz\Html\HTMLMinify::DOCTYPE_HTML5;
+            $options['doctype'] = HTMLMinify::DOCTYPE_HTML5;
         }
 
         $options['removeComment']     = ((int)$extConfig['remove_comments'] === 1);
-        $options['optimizationLevel'] = ((int)$extConfig['remove_all_whitespaces'] === 1) ? \zz\Html\HTMLMinify::OPTIMIZATION_ADVANCED : \zz\Html\HTMLMinify::OPTIMIZATION_SIMPLE;
+        $options['optimizationLevel'] = ((int)$extConfig['remove_all_whitespaces'] === 1) ? HTMLMinify::OPTIMIZATION_ADVANCED : HTMLMinify::OPTIMIZATION_SIMPLE;
         $options['excludeComment']    = [];
 
         if ((int)$extConfig['remove_comments'] === 1 && (int)$extConfig['keep_typo3_header_comment'] === 1) {
